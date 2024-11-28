@@ -6,7 +6,7 @@ import logging
 import subprocess  # 크론 작업 삭제를 위해 추가
 
 # 로깅 설정
-LOG_FILE = "/home/one/mysql2/mysql/process.log"
+LOG_FILE = "/home/one/mysql3/mysql/process.log"
 logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO,
@@ -31,7 +31,7 @@ db_config = {
 }
 
 # 상태 파일 경로
-state_file = "/home/one/mysql2/mysql/progress_state.txt"
+state_file = "/home/one/mysql3/mysql/progress_state.txt"
 
 # 시작 및 끝 날짜 설정
 START_DATE = datetime(2010, 8, 16)
@@ -148,7 +148,7 @@ def remove_cron_job():
     """크론 작업 삭제."""
     try:
         # `process.log`를 기준으로 특정 크론 작업 제거
-        cron_comment = "/home/one/mysql2/mysql/process.log"
+        cron_comment = "/home/one/mysql3/mysql/process.log"
         subprocess.run(f"crontab -l | grep -v '{cron_comment}' | crontab -", shell=True, check=True)
         logging.info("Cron job removed successfully.")
     except subprocess.CalledProcessError as e:

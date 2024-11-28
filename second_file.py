@@ -16,7 +16,7 @@ db_config = {
     'password': '1234',
     'database': 'CJD'
 }
-state_file = "/home/one/DC/progress_second.txt"
+state_file = "/home/one/mysql3/mysql/progress_second.txt"
 
 def read_last_date():
     """상태 파일에서 마지막으로 처리한 날짜를 읽습니다."""
